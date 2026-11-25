@@ -22,6 +22,8 @@ export default defineConfig({
   plugins: [react(), lintPageLast()],
   build: {
     cssCodeSplit: false,
+    cssTarget: 'chrome80',
+    cssMinify: false,
     rollupOptions: {
       output: {
         entryFileNames: 'scripts/[name]-[hash].js',
