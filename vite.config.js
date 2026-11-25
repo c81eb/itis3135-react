@@ -1,13 +1,13 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// Moves the Accumulus script to the end of <head> after Vite injects its own tags
-const accumulusLast = () => ({
-  name: 'accumulus-last',
+// Moves the Lint.Page script to the end of <head> after Vite injects its own tags
+const lintPageLast = () => ({
+  name: 'lint-page-last',
   transformIndexHtml: {
     order: 'post',
     handler(html) {
-      const re = /[ \t]*<script[^>]*accumulus[^>]*><\/script>[ \t]*\n?/i
+      const re = /[ \t]*<script[^>]*lint\.page[^>]*><\/script>[ \t]*\n?/i
       const match = html.match(re)
       if (!match) return html
       return html
@@ -19,7 +19,7 @@ const accumulusLast = () => ({
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), accumulusLast()],
+  plugins: [react(), lintPageLast()],
   build: {
     cssCodeSplit: false,
     rollupOptions: {
