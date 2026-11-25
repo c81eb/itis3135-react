@@ -1,7 +1,7 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// Moves the Lint.Page script to the end of <head> after Vite injects its own tags
+// Moves the Lint.Page (Accumulus) script to the end of <head> after Vite injects its own tags
 const lintPageLast = () => ({
   name: 'lint-page-last',
   transformIndexHtml: {
