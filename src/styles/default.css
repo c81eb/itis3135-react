@@ -1,0 +1,85 @@
+/* General Page Styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;   /* body font */
+    background-color: #f8f9fa;
+    color: #212529;
+    margin: 0 auto;        /* centers the page */
+    max-width: 60rem;      /* keeps lines readable */
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;   /* second font for headings */
+    color: #2c3e50;
+}
+
+/* Small screens: stack nav links and tighten padding */
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    nav a { display: inline-block; padding: 0.3rem 0; }
+}
+
+/* Requirement: h6 display name styled large and must NOT wrap */
+h6 {
+    font-size: 1.8em;
+    white-space: nowrap;
+    margin: 15px 0;
+    color: #2c3e50;
+}
+
+/* Navigation Links */
+nav a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Figure & Caption Styling */
+figure {
+    margin: 20px 0;
+}
+
+figcaption {
+    font-style: italic;
+    color: #555;
+    margin-top: 8px;
+}
+
+/* Blockquote Styling */
+blockquote {
+    border-left: 4px solid #0056b3;
+    padding-left: 15px;
+    margin: 20px 0;
+    font-style: italic;
+    background-color: #e9ecef;
+    padding: 10px 15px;
+}
+/* Pictures page: side-by-side image rows */
+.img-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-start;
+}
+.img-row figure {
+    margin: 0;
+}
+/* Pictures page: enlarging demo - both images get the same displayed width */
+.same-size {
+    width: 300px;
+}
+/* Form page: labels and fields stacked, fields sized to fit */
+label { display: block; margin: 0.5rem 0; }
+input[type="text"], input[type="url"], input[type="date"], textarea {
+    display: block;
+    width: 100%;
+    max-width: 40rem;
+    box-sizing: border-box;
+}
+fieldset { margin: 1rem 0; }
+button { margin: 0.5rem 0.5rem 0.5rem 0; }
