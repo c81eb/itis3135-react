@@ -24,7 +24,9 @@ export default defineConfig({
     cssCodeSplit: false,
     cssTarget: 'chrome80',
     cssMinify: false,
-    target: 'es2018',
+    target: 'es2015',
+    minify: false,
+    modulePreload: { polyfill: false },
     rollupOptions: {
       output: {
         entryFileNames: 'scripts/[name]-[hash].js',
