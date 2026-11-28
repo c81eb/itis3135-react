@@ -17,9 +17,20 @@ const lintPageLast = () => ({
   },
 })
 
+// Rewrites "//" inside double-quoted strings to "/\/" so Accumulus doesn't mistake it for a comment
+const escapeDoubleSlash = () => ({
+  name: 'escape-double-slash',
+  renderChunk(code) {
+    const out = code.replace(/"([^"\\\n]*\/\/[^"\\\n]*)"/g, (m, s) =>
+      '"' + s.replace(/\/\//g, '/\\/') + '"'
+    )
+    return { code: out, map: null }
+  },
+})
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), lintPageLast()],
+  plugins: [react(), lintPageLast(), escapeDoubleSlash()],
   build: {
     cssCodeSplit: false,
     cssTarget: 'chrome80',
